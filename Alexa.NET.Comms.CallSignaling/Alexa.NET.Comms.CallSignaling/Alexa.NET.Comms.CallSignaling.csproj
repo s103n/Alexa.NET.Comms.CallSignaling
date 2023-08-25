@@ -1,0 +1,22 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+    <PropertyGroup>
+        <TargetFramework>netstandard2.0</TargetFramework>
+        <PackageId>Alexa.NET.Comms.CallSignaling</PackageId>
+        <Version>1.0.0</Version>
+        <Authors>s103n</Authors>
+        <Description>Extension for Alexa.NET library that adds Alexa.Comms.CallSignaling interface requests</Description>
+    </PropertyGroup>
+
+    <ItemGroup>
+      <PackageReference Include="Alexa.NET" Version="1.22.0" />
+      <PackageReference Include="Newtonsoft.Json" Version="13.0.3" />
+    </ItemGroup>
+
+
+
+
+
+
+
+</Project>

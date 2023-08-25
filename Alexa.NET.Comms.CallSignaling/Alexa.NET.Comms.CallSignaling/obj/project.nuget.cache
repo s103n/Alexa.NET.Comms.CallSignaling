@@ -1,0 +1,13 @@
+{
+  "version": 2,
+  "dgSpecHash": "xrXz8sE97tAq8wy+yQQSBj7gdC68t42N7jzx4E63WTVYVHXMWGm7R4kAeasnrSWA+ucgyrNxX4lWGTOz1Cn+zA==",
+  "success": true,
+  "projectFilePath": "/Users/bohdanmukha/Documents/GitHub/Alexa.NET.Comms.CallSignaling/Alexa.NET.Comms.CallSignaling/Alexa.NET.Comms.CallSignaling/Alexa.NET.Comms.CallSignaling.csproj",
+  "expectedPackageFiles": [
+    "/Users/bohdanmukha/.nuget/packages/alexa.net/1.22.0/alexa.net.1.22.0.nupkg.sha512",
+    "/Users/bohdanmukha/.nuget/packages/microsoft.netcore.platforms/1.1.0/microsoft.netcore.platforms.1.1.0.nupkg.sha512",
+    "/Users/bohdanmukha/.nuget/packages/netstandard.library/2.0.3/netstandard.library.2.0.3.nupkg.sha512",
+    "/Users/bohdanmukha/.nuget/packages/newtonsoft.json/13.0.3/newtonsoft.json.13.0.3.nupkg.sha512"
+  ],
+  "logs": []
+}
