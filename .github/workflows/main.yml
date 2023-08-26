@@ -15,13 +15,20 @@ jobs:
         with:
           dotnet-version: '6.x'
 
-      - name: Build Solution
-        run:  dotnet build -c Release Alexa.NET.Comms.CallSignaling/Alexa.NET.Comms.CallSignaling.sln
+      - name: Check version change
+        id: check_version
+        run: |
+          VERSION_CHANGED=$(git diff HEAD^ HEAD -- '**/*.csproj' | grep "<Version>")
+          if [ -z "$VERSION_CHANGED" ]; then
+            echo "Version hasn't changed. Skipping package deployment."
+            echo "::set-output name=version_changed::false"
+          else
+            echo "Version has changed. Proceeding to package deployment."
+            echo "::set-output name=version_changed::true"
+          fi
 
-      - name: Publish on version change
-        id: publish_nuget
-        uses: brandedoutcast/publish-nuget@v2
-        with:
-          PROJECT_FILE_PATH: Alexa.NET.Comms.CallSignaling/Alexa.NET.Comms.CallSignaling/Alexa.NET.Comms.CallSignaling.csproj
-          PACKAGE_NAME: Alexa.NET.Comms.CallSignaling
-          NUGET_KEY: ${{secrets.NUGET_API_KEY}}
+      - name: Build & Publish NuGet package
+        if: steps.check_version.outputs.version_changed == 'true'
+        run: |
+          dotnet pack --configuration Release --output nupkgs
+          dotnet nuget push nupkgs/*.nupkg --api-key ${{ secrets.NUGET_API_KEY }} --source https://api.nuget.org/v3/index.json
