@@ -3,13 +3,14 @@
     <PropertyGroup>
         <TargetFramework>netstandard2.0</TargetFramework>
         <PackageId>Alexa.NET.Comms.CallSignaling</PackageId>
-        <Version>1.0.2</Version>
+        <Version>1.0.4</Version>
         <Authors>s103n</Authors>
         <Description>Extension for Alexa.NET library that adds Alexa.Comms.CallSignaling interface requests</Description>
         <RepositoryUrl>https://github.com/s103n/Alexa.NET.Comms.CallSignaling</RepositoryUrl>
         <PackageProjectUrl>https://github.com/s103n/Alexa.NET.Comms.CallSignaling</PackageProjectUrl>
         <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
-        <PackageLicense>https://github.com/s103n/Alexa.NET.Comms.CallSignaling/blob/main/LICENSE</PackageLicense>
+        <PackageLicenseFile>LICENSE</PackageLicenseFile>
+        <PackageTags>amazon;alexa;echo;dot;echo dot;skills;webrtc;call;signaling;comms</PackageTags>
     </PropertyGroup>
 
     <ItemGroup>
@@ -19,7 +20,8 @@
 
     <ItemGroup>
       <Content Include="..\..\LICENSE">
-        <Link>LICENSE</Link>
+        <Pack>True</Pack>
+        <PackagePath></PackagePath>
       </Content>
       <Content Include="..\..\README.md">
         <Link>README.md</Link>
