@@ -16,7 +16,7 @@ jobs:
           dotnet-version: '6.x'
 
       - name: Build Solution
-        run:  dotnet build -c Release
+        run:  dotnet build -c Release Alexa.NET.Comms.CallSignaling/Alexa.NET.Comms.CallSignaling.sln
 
       - name: Publish on version change
         id: publish_nuget
