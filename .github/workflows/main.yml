@@ -1,0 +1,27 @@
+name: Build and Deploy
+on:
+  push:
+    branches:
+    - main
+jobs:
+  runner:
+    name: Package Pipeline
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@master
+
+      - name: Setup .NET
+        uses: actions/setup-dotnet@v1
+        with:
+          dotnet-version: '6.x'
+
+      - name: Build Solution
+        run:  dotnet build -c Release
+
+      - name: Publish on version change
+        id: publish_nuget
+        uses: brandedoutcast/publish-nuget@v2
+        with:
+          PROJECT_FILE_PATH: Alexa.NET.Comms.CallSignaling/Alexa.NET.Comms.CallSignaling/Alexa.NET.Comms.CallSignaling.csproj
+          PACKAGE_NAME: Alexa.NET.Comms.CallSignaling
+          NUGET_KEY: ${{secrets.NUGET_API_KEY}}
