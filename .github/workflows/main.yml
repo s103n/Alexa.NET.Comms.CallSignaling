@@ -38,5 +38,5 @@ jobs:
       - name: Build & Publish NuGet package
         if: steps.check_version.outputs.version_changed == 'true'
         run: |
-          dotnet pack --configuration Release --output nupkgs
+          dotnet pack -c Release -o nupkgs Alexa.NET.Comms.CallSignaling/Alexa.NET.Comms.CallSignaling.sln
           dotnet nuget push nupkgs/*.nupkg --api-key ${{ secrets.NUGET_API_KEY }} --source https://api.nuget.org/v3/index.json
