@@ -1,13 +1,15 @@
 using Alexa.NET.Comms.CallSignaling.Base;
+using Alexa.NET.Comms.CallSignaling.Enums;
 using Alexa.NET.Request.Type;
 using Newtonsoft.Json;
+using Newtonsoft.Json.Converters;
 
 namespace Alexa.NET.Comms.CallSignaling.Responses
 {
     public class CallUpdateResponse : BaseSdpDetailsRequest
     {
-        [JsonProperty("renegotiationType")]
-        public string RenegotiationType { get; set; }
+        [JsonProperty("renegotiationType"), JsonConverter(typeof(StringEnumConverter))]
+        public RenegotiationType RenegotiationType { get; set; }
     }
     
     public class CallUpdateResponseTypeConverter : IRequestTypeConverter

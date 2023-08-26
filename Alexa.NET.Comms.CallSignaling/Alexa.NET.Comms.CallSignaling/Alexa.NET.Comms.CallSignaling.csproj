@@ -11,6 +11,16 @@
     <ItemGroup>
       <PackageReference Include="Alexa.NET" Version="1.22.0" />
       <PackageReference Include="Newtonsoft.Json" Version="13.0.3" />
+    <ItemGroup>
+      <Content Include="..\..\LICENSE">
+        <Link>LICENSE</Link>
+      </Content>
+      <Content Include="..\..\README.md">
+        <Link>README.md</Link>
+      </Content>
+    </ItemGroup>
+
+
     </ItemGroup>
 
 

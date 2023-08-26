@@ -1,6 +1,8 @@
 using Alexa.NET.Comms.CallSignaling.Base;
+using Alexa.NET.Comms.CallSignaling.Enums;
 using Alexa.NET.Request.Type;
 using Newtonsoft.Json;
+using Newtonsoft.Json.Converters;
 
 namespace Alexa.NET.Comms.CallSignaling.Requests
 {
@@ -9,8 +11,8 @@ namespace Alexa.NET.Comms.CallSignaling.Requests
         /// <summary>
         /// Type of renegotiation. The acceptable values are CALL_HOLD, CALL_RESUME, CALL_UPDATE.
         /// </summary>
-        [JsonProperty("renegotiationType")]
-        public string RenegotiationType { get; set; }
+        [JsonProperty("renegotiationType"), JsonConverter(typeof(StringEnumConverter))]
+        public RenegotiationType RenegotiationType { get; set; }
     }
     
     public class CallUpdateRequestTypeConverter : IRequestTypeConverter

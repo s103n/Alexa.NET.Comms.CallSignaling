@@ -1,4 +1,6 @@
+using Alexa.NET.Comms.CallSignaling.Enums;
 using Newtonsoft.Json;
+using Newtonsoft.Json.Converters;
 
 namespace Alexa.NET.Comms.CallSignaling.Base
 {
@@ -9,8 +11,8 @@ namespace Alexa.NET.Comms.CallSignaling.Base
             /// <summary>
             /// Type of supported participant ID. Possible values: COMMUNICATION_PROFILE_ID, PHONE_NUMBER, RAW_ADDRESS. RAW_ADDRESS means the address is used as is.
             /// </summary>
-            [JsonProperty("type")]
-            public string Type { get; set; }
+            [JsonProperty("type"), JsonConverter(typeof(StringEnumConverter))]
+            public ParticipantIdType Type { get; set; }
             
             /// <summary>
             /// Participant identifier value. This value can be a phone number, raw address value, or communication profile ID. Raw address value is used as is.
