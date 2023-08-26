@@ -9,6 +9,7 @@
         <RepositoryUrl>https://github.com/s103n/Alexa.NET.Comms.CallSignaling</RepositoryUrl>
         <PackageProjectUrl>https://github.com/s103n/Alexa.NET.Comms.CallSignaling</PackageProjectUrl>
         <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
+        <PackageLicense>https://github.com/s103n/Alexa.NET.Comms.CallSignaling/blob/main/LICENSE</PackageLicense>
     </PropertyGroup>
 
     <ItemGroup>
