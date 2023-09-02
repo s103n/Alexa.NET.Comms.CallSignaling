@@ -1,5 +1,6 @@
 using System.Collections.Generic;
 using Alexa.NET.Comms.CallSignaling.Requests;
+using Alexa.NET.Comms.CallSignaling.Requests.Auth;
 using Alexa.NET.Comms.CallSignaling.Responses;
 using Alexa.NET.Request.Type;
 
@@ -21,7 +22,8 @@ namespace Alexa.NET.Comms.CallSignaling
                 new CallUpdateRequestTypeConverter(),
                 new CallUpdateAckRequestTypeConverter(),
                 new InitiateInboundCallRequestTypeConverter(),
-                new CallUpdateResponseTypeConverter()
+                new CallUpdateResponseTypeConverter(),
+                new AuthorizationGrantRequestTypeConverter()
             });
         }
     }
